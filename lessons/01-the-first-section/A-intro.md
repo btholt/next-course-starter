@@ -1,6 +1,11 @@
 ---
 title: "Introduction"
 description: "The introduction to this course."
+keywords:
+  - A course starter
+  - Next.js
+  - React
+  - Brian Holt
 ---
 
 Hello! And welcome to the Next.js course starter by [Brian Holt][twitter].

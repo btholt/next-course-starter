@@ -75,6 +75,9 @@ Each of these lessons can have a [frontmatter](https://github.com/jonschlinkert/
 
 - _title_ – If you want the title to be different from the file name, you can specify here what that title should be. Frequently this useful for things where the capitalization would be off e.g. TailwindCSS instead of Tailwindcss. Optional.
 - _description_ – If you want to give individual lessons descriptions for SEO and for Frontend Masters, you can write a brief description here.
+- _keywords_ - If you want to give individual lessons keywords for SEO purposes, write a comma separated list
+
+🤖: now the course starter can auto-generate the description and keywords for you using ChatGPT. See below how to.
 
 Be aware because of how the numbers and letters are stripped out, it is possible to have ambigious paths. `01-welcome/A-intro.md` and `03-welcome/D-intro.md` would resolve to the same thing and only the first one would be visitable.
 
@@ -113,6 +116,7 @@ If you want a custom domain, make sure you uncomment the `fqdn` field in [.githu
 - `npm run export` - Builds your site statically, use this if you're going to deploy to GitHub Pages, S3, or somewhere else with no server. This will run next build and then next export (no need to run build yourself first.)
 - `npm run start` - Start an already-built server.
 - `npm run csv` – Will generate the CSV of the metadata from your course. Note you may have to run build first, depending on your csvPath.
+- `npm run seo` – Using ChatGPT, every file that does not have a description, ChatGPT will generate a description and keywords and write them to the file. Requires you to set a valid `OPENAI_API_KEY` (which means having a paid OpenAI account) using a [.env](https://github.com/motdotla/dotenv) or just by setting it in the environment. If a description already exists, this will skip it.
 
 ## Analytics
 
