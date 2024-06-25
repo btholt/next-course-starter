@@ -109,8 +109,9 @@ If you want a custom domain, make sure you uncomment the `fqdn` field in [.githu
 These instructions assume you've followed the setup instructions above and have a cloned version of this repo locally.
 
 1. Create a new remote repository in your GitHub Account (e.g. fem-javascript-fundamentals).
+1. Grant `Read and write permissions` for Workflows under Actions > General > Workflow Permissions.
 1. Update the `productionBaseUrl` in the `course.json` file to match the name of the repository.
-1. Push to the new repository. You should see the site build under the Actions tab.
+1. Push to the new repository. You should see the `Deploy NextJS Course Site` workflow run under the Actions tab.
 1. Configure GitHub Pages: Settings > Pages > Deploy from a Branch. Select the `gh-pages` branch.
 1. Once the `pages-build-deployment` action completes, you should see your site at `https://USERNAME.github.io/REPO_NAME`.
 
