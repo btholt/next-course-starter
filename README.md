@@ -128,7 +128,6 @@ _Future pushes to the main branch will automatically trigger a new deployment._
 
 - `npm run dev` - Next's dev command. Start a local dev server. Note if you have a productionBasePath set in your course.json, your dev server will respect that (so you don't mess up your paths in production.)
 - `npm run build` - Build your site for production. This will still include the Next.js server run time. Use this if you're using something like Vercel to host your site.
-- `npm run export` - Builds your site statically, use this if you're going to deploy to GitHub Pages, S3, or somewhere else with no server. This will run next build and then next export (no need to run build yourself first.)
 - `npm run start` - Start an already-built server.
 - `npm run csv` – Will generate the CSV of the metadata from your course. Note you may have to run build first, depending on your csvPath.
 - `npm run seo` – Using ChatGPT, every file that does not have a description, ChatGPT will generate a description and keywords and write them to the file. Requires you to set a valid `OPENAI_API_KEY` (which means having a paid OpenAI account) using a [.env](https://github.com/motdotla/dotenv) or just by setting it in the environment. If a description already exists, this will skip it.
