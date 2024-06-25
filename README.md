@@ -1,16 +1,18 @@
-<h1 align="center">next-course-starter</h1> <br>
+<h1 align="center">Course Website Starter Template</h1> <br>
 
 <p align="center">
-  A NextJS starter to get you started creating educational materials using Markdown
+  A starter template build in Next.js for creating educational materials using Markdown.
 </p>
 
 ## Get Started
 
-1. Set up Node.js v14+
+1. Set up Node.js v20+
 1. Clone this repo
 1. Run `npm install`
 1. Run `npm run dev` to start the dev server
 1. Open http://localhost:3000 in a browser
+
+_Instructions for deploying the course website to GitHub Pages are below_
 
 ## Configure Your Course
 
@@ -94,13 +96,25 @@ The code blocks use [Highlight.js](https://highlightjs.org/static/demo/). By def
 
 ## GitHub Pages / GitHub Actions
 
-By default this repo works with GitHub Pages. Just make sure you set the `productionBaseUrl` in the course.json to the name of the repo.
+By default this repo works with GitHub Pages (classic). Just make sure you set the `productionBaseUrl` in the course.json to the name of the repo.
 
-It also includes a GitHub Action to automatically deploy to your gh-pages branch. Just make sure that your repo has GitHub Pages enabled and the branch is set to gh-pages. If you're not deploying to GitHub Pages go ahead and delete the `.github` directory.
+It also includes a GitHub Action to automatically deploy to your `gh-pages` branch. Just make sure that your repo has GitHub Pages (classic) enabled and the branch is set to `gh-pages`. If you're not deploying to GitHub Pages go ahead and delete the `.github` directory.
 
 By default the GitHub Action looks for a `main` branch, so be sure you're using that instead of `master`.
 
 If you want a custom domain, make sure you uncomment the `fqdn` field in [.github/workflows/next.yaml](https://github.com/btholt/next-course-starter/blob/main/.github/workflows/next.yaml) file and put your custom domain. If you don't do that and only set it up with the GitHub web GUI, every deploy will break the custom domain.
+
+### GitHub Pages Instructions
+
+These instructions assume you've followed the setup instructions above and have a cloned version of this repo locally.
+
+1. Create a new remote repository in your GitHub Account (e.g. fem-javascript-fundamentals).
+1. Update the `productionBaseUrl` in the `course.json` file to match the name of the repository.
+1. Push to the new repository. You should see the site build under the Actions tab.
+1. Configure GitHub Pages: Settings > Pages > Deploy from a Branch. Select the `gh-pages` branch.
+1. Once the `pages-build-deployment` action completes, you should see your site at `https://USERNAME.github.io/REPO_NAME`.
+
+_Future pushes to the main branch will automatically trigger a new deployment._
 
 ## Example Sites
 
