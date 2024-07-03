@@ -11,19 +11,6 @@ const config = {
   env: {
     BASE_URL,
   },
-  async redirects() {
-    if (BASE_URL) {
-      return [
-        {
-          source: "/",
-          destination: BASE_URL,
-          basePath: false,
-          permanent: false,
-        },
-      ];
-    }
-    return [];
-  },
 };
 
 export default config;
