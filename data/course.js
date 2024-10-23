@@ -14,6 +14,7 @@ const DEFAULT_CONFIG = {
     linkedin: "btholt",
     github: "btholt",
     twitter: "holtbt",
+    bluesky: "brianholt.me",
   },
   productionBaseUrl: "/",
 };
