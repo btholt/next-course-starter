@@ -68,7 +68,7 @@ a {
   text-transform: uppercase;
 }
 
-.navbar-info {
+.navbar-location {
   display: flex;
   flex-direction: row;
   align-items: center;

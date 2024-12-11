@@ -8,21 +8,21 @@ export default function Header(props) {
   const { frontendMastersLink } = useContext(CourseContext);
   return (
     <header className="navbar">
-      <h1 className="navbar-brand">
-        <Link href="/">{props.title}</Link>
-      </h1>
-      <div className="navbar-info">
-        {frontendMastersLink ? (
-          <a href={frontendMastersLink} className="cta-btn">
-            Watch on Frontend Masters
-          </a>
-        ) : null}
+      <div className="navbar-location">
+        <h1 className="navbar-brand">
+          <Link href="/">{props.title}</Link>
+        </h1>
         {section ? (
           <h2>
             {section} <i className={`fas fa-${icon}`} /> {title}
           </h2>
         ) : null}
       </div>
+      {frontendMastersLink ? (
+        <a href={frontendMastersLink} className="cta-btn">
+          Watch on Frontend Masters
+        </a>
+      ) : null}
     </header>
   );
 }
