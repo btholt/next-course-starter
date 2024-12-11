@@ -504,6 +504,7 @@ ol.sections-name .lesson-details {
   padding-right: 10px;
 }
 
+.cta-btn:hover,
 .lesson-links a:hover {
   background: #152837;
   text-decoration: none;
