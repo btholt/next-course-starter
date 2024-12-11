@@ -63,7 +63,6 @@ a {
 .navbar h2 {
   font-size: 14px;
   margin: inherit;
-  margin-left: 15px;
   padding: inherit;
   text-transform: uppercase;
 }
@@ -73,6 +72,7 @@ a {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  padding: 6px;
 }
 
 header .cta-btn {
