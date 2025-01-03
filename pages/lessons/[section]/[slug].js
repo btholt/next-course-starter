@@ -4,17 +4,23 @@ import { getLesson, getLessons } from "../../../data/lesson";
 import getCourseConfig from "../../../data/course";
 import Corner from "../../../components/corner";
 import { Context } from "../../../context/headerContext";
+import createCopyCodeFunctionality from "../../../data/copyCode";
 
 export default function LessonSlug({ post }) {
   const courseInfo = getCourseConfig();
   const [_, setHeader] = useContext(Context);
+
   useEffect(() => {
     setHeader({
       section: post.section,
       title: post.title,
       icon: post.icon,
     });
-    return () => setHeader({});
+    let elementsToClean = createCopyCodeFunctionality();
+    return () => {
+      setHeader({});
+      elementsToClean = [];
+    }
   }, []);
 
   const title = post.title
