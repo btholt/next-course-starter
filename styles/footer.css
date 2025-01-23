@@ -45,10 +45,10 @@
   text-decoration: underline;
 }
 
-.social svg {
+.social svg, .theme-icons svg {
   transition: opacity 0.25s;
 }
 
-.social svg:hover {
+.social svg:hover, .theme-icons svg:hover {
   opacity: 0.4;
 }
