@@ -11,20 +11,20 @@
     "seo": "node summary/index.js"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.6.0",
+    "@fortawesome/fontawesome-free": "^6.7.2",
     "gray-matter": "^4.0.3",
-    "highlight.js": "^11.10.0",
-    "marked": "^14.1.0",
-    "marked-highlight": "^2.1.4",
-    "next": "^14.2.6",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "title-case": "^4.3.1"
+    "highlight.js": "^11.11.1",
+    "marked": "^15.0.6",
+    "marked-highlight": "^2.2.1",
+    "next": "^15.1.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "title-case": "^4.3.2"
   },
   "devDependencies": {
     "convert-array-to-csv": "^2.0.0",
-    "dotenv": "^16.4.5",
-    "openai": "^4.68.2",
-    "zod": "^3.23.8"
+    "dotenv": "^16.4.7",
+    "openai": "^4.80.1",
+    "zod": "^3.24.1"
   }
 }
