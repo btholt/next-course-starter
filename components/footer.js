@@ -3,7 +3,7 @@ import Gh from "./github";
 import Tw from "./twitter";
 import Li from "./linkedin";
 import Bs from "./bluesky";
-import ThemeIcons from "./themeicons"; // Import the ThemeIcons component
+import ThemeIcons from "./themeicons";
 
 export default function Footer({ twitter, linkedin, github, bluesky }) {
   return (
