@@ -24,18 +24,9 @@
 
   --emphasized-bg: #dce8ff;
   --emphasized-border: #aab6d2;
-
-  /* #darkicon {
-  visibility: visible;
- }
-
- #lighticon {
-  visibility: hidden;
- } */
 }
 
- @media (prefers-color-scheme: dark) {
-  :root {
+ [data-theme="dark"] {
   --primary: #224159;
   --secondary: #93aca7;
   --highlight: #dfa067;
@@ -78,11 +69,3 @@
   color: var(--highlight);
  }
 
- #darkicon {
-  visibility: hidden;
- }
-
- #lighticon {
-  visibility: visible;
- }
-}

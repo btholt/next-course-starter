@@ -52,3 +52,12 @@
 .social svg:hover, .theme-icons svg:hover {
   opacity: 0.4;
 }
+
+.theme-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
