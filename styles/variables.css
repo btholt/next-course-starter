@@ -16,6 +16,7 @@
 
   --nav-buttons: var(--highlight);
   --nav-buttons-text: white;
+  --nav-buttons-text-hover: white;
 
   --corner-active: var(--highlight);
   --corner-inactive: #f4f4f4;
@@ -43,6 +44,7 @@
   --bg-lesson: #323232;
   --nav-buttons: var(--highlight);
   --nav-buttons-text: var(--primary);
+  --nav-buttons-text-hover: var(--highlight);
 
   --corner-active: var(--highlight);
   --corner-inactive: #2a2a2a;

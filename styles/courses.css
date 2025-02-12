@@ -508,6 +508,7 @@ ol.sections-name .lesson-details {
 
 .lesson-links a:hover {
   background: #152837;
+  color: var(--nav-buttons-text-hover);
   text-decoration: none;
 }
 
