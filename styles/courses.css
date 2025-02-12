@@ -73,6 +73,7 @@ a {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  color: var(--lesson-text);
 }
 
 header .cta-btn {
@@ -287,7 +288,7 @@ header .cta-btn {
 }
 
 .lesson-content td {
-  border: 1px solid black;
+  border: 1px solid var(--lesson-text);
   padding: 8px;
 }
 
@@ -354,12 +355,13 @@ blockquote > *:last-child {
 
 .lesson-content {
   line-height: 1.5;
+  color: var(--lesson-text);
 }
 
 .lesson-text {
   width: 100%;
   padding: 25px 5px 25px 35px;
-  min-height: 200px;
+  min-height: 200px
 }
 
 .sections-name {
@@ -507,6 +509,7 @@ ol.sections-name .lesson-details {
 .cta-btn:hover,
 .lesson-links a:hover {
   background: #152837;
+  color: var(--nav-buttons-text-hover);
   text-decoration: none;
 }
 

@@ -3,6 +3,7 @@ import Gh from "./github";
 import Tw from "./twitter";
 import Li from "./linkedin";
 import Bs from "./bluesky";
+import ThemeIcons from "./themeicons";
 
 export default function Footer({ twitter, linkedin, github, bluesky }) {
   return (
@@ -47,6 +48,9 @@ export default function Footer({ twitter, linkedin, github, bluesky }) {
           </div>
         </li>
       </ul>
+      <div className="theme-icons">
+        <ThemeIcons />
+      </div>
     </footer>
   );
 }

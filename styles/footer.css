@@ -45,10 +45,19 @@
   text-decoration: underline;
 }
 
-.social svg {
+.social svg, .theme-icons svg {
   transition: opacity 0.25s;
 }
 
-.social svg:hover {
+.social svg:hover, .theme-icons svg:hover {
   opacity: 0.4;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
 }
