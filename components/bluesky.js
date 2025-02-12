@@ -4,7 +4,7 @@ export default function BlueskyLogo() {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 -3.268 64 68.414"
       width="38"
-      height="auto"
+      height="100%"
     >
       <path
         fill="var(--footer-icons)"

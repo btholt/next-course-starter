@@ -33,7 +33,7 @@ export default function ThemeIcons() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="36px"
-          height="auto"
+          height="100%"
           viewBox="0 -960 960 960"
           fill="var(--text-footer)"
           role="img"
@@ -45,7 +45,7 @@ export default function ThemeIcons() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="36px"
-          height="auto"
+          height="100%"
           viewBox="0 -960 960 960"
           fill="var(--text-footer)"
           role="img"
