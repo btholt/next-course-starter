@@ -37,7 +37,7 @@ This json file allows you to configure the details of the site. Update the info 
 
 ### styles/variables.css
 
-Here is where you can theme your site. You can retheme the whole site with just these.
+Here is where you can theme your site. You can retheme the whole site with just these. There are variables for both light and dark theme styles.
 
 ### public/images
 
@@ -120,9 +120,9 @@ _Future pushes to the main branch will automatically trigger a new deployment._
 ## Example Sites
 
 - [This repo itself](https://btholt.github.io/next-course-starter/)
-- [Complete Intro to React v6](https://btholt.github.io/next-react-v6/)
-- [Complete Intro to React v7](https://btholt.github.io/complete-intro-to-react-v7/)
-- [Complete Intro to Web Dev v3](https://btholt.github.io/complete-intro-to-web-dev-v3/)
+- [Complete Intro to React v9](https://react-v9.holt.courses/)
+- [Complete Intro to SQLite](https://sqlite.holt.courses/)
+- [Vanilla JS: You Might Not Need a Framework](https://firtman.github.io/vanilla/)
 
 ## npm commands
 
