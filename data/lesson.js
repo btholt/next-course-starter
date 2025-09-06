@@ -61,7 +61,7 @@ export async function getLessons() {
   for (let dirFilename of dir) {
     const dirStats = await fs.lstat(path.join(lessonsPath, dirFilename));
 
-    if (dirStats.isFile()) {
+    if (!dirStats.isDirectory()) {
       continue;
     }
 
@@ -129,6 +129,10 @@ export async function getLesson(targetDir, targetFile) {
 
   for (let i = 0; i < dir.length; i++) {
     const dirPath = dir[i];
+    const dirStats = await fs.lstat(path.join(lessonsPath, dirPath));
+    if (!dirStats.isDirectory()) {
+      continue;
+    }
     if (dirPath.endsWith(targetDir)) {
       const lessonDir = (
         await fs.readdir(path.join(lessonsPath, dirPath))
@@ -157,15 +161,22 @@ export async function getLesson(targetDir, targetFile) {
             nextSlug = `${targetDir}/${next.replace(/\.md$/, "")}`;
           } else if (dir[i + 1]) {
             // has next in next section
-            const nextDir = (
-              await fs.readdir(path.join(lessonsPath, dir[i + 1]))
-            ).filter((str) => str.endsWith(".md"));
-            const nextDirSlug = slugify(dir[i + 1]).slug;
-            const nextLessonSlug = slugify(nextDir[0]).slug.replace(
-              /\.md$/,
-              ""
+            const nextDirStats = await fs.lstat(
+              path.join(lessonsPath, dir[i + 1])
             );
-            nextSlug = `${nextDirSlug}/${nextLessonSlug}`;
+            if (!nextDirStats.isDirectory()) {
+              nextSlug = null;
+            } else {
+              const nextDir = (
+                await fs.readdir(path.join(lessonsPath, dir[i + 1]))
+              ).filter((str) => str.endsWith(".md"));
+              const nextDirSlug = slugify(dir[i + 1]).slug;
+              const nextLessonSlug = slugify(nextDir[0]).slug.replace(
+                /\.md$/,
+                ""
+              );
+              nextSlug = `${nextDirSlug}/${nextLessonSlug}`;
+            }
           } else {
             // last section
             nextSlug = null;
@@ -178,14 +189,21 @@ export async function getLesson(targetDir, targetFile) {
             prevSlug = `${targetDir}/${prev.replace(/\.md$/, "")}`;
           } else if (dir[i - 1]) {
             // has prev in prev section
-            const prevDir = (
-              await fs.readdir(path.join(lessonsPath, dir[i - 1]))
-            ).filter((str) => str.endsWith(".md"));
-            const prevDirSlug = slugify(dir[i - 1]).slug;
-            const prevLessonSlug = slugify(
-              prevDir[prevDir.length - 1]
-            ).slug.replace(/\.md$/, "");
-            prevSlug = `${prevDirSlug}/${prevLessonSlug}`;
+            const prevDirStats = await fs.lstat(
+              path.join(lessonsPath, dir[i - 1])
+            );
+            if (!prevDirStats.isDirectory()) {
+              prevSlug = null;
+            } else {
+              const prevDir = (
+                await fs.readdir(path.join(lessonsPath, dir[i - 1]))
+              ).filter((str) => str.endsWith(".md"));
+              const prevDirSlug = slugify(dir[i - 1]).slug;
+              const prevLessonSlug = slugify(
+                prevDir[prevDir.length - 1]
+              ).slug.replace(/\.md$/, "");
+              prevSlug = `${prevDirSlug}/${prevLessonSlug}`;
+            }
           } else {
             // first section
             prevSlug = null;
