@@ -15,5 +15,6 @@
   "description": "A starter kit for making really amazing courses, optimized for Frontend Masters",
   "keywords": ["your", "Google", "keywords", "here"],
   "productionBaseUrl": "/next-course-starter",
-  "csvPath": "./out/lessons.csv"
+  "csvPath": "./out/lessons.csv",
+  "llmFullTextPath": "./out/llms.txt"
 }

@@ -34,6 +34,7 @@ This json file allows you to configure the details of the site. Update the info 
 - _keywords_ – The SEO keywords for this course. An array of strings
 - _productionBaseUrl_ – Typically useful for GitHub Pages. This adds a base path to your project. For GitHub Pages, this will be the name of your repo. For example, this site's base URL is `/next-course-starter` because the production URL for this site is `btholt.github.io/next-course-starer`. Do note this will also make your dev server's base URL this as well so you can catch problems before they go to production. **IF THIS IS SET, YOUR / PATH WILL 404**
 - _csvPath_ – A CSV with the meta data for your lessons will be created at this path when you build or export the project. If you delete this config option it will not generate a CSV.
+- _llmFullTextPath_ – If this is set, all of your markdown lessons will be concatenated together and put at this path. This is so students can grab the entire text of the course notes and load them into an LLM for extra help using your material. If this isn't set, it will not be generated.
 
 ### styles/variables.css
 
@@ -121,7 +122,7 @@ _Future pushes to the main branch will automatically trigger a new deployment._
 
 - [This repo itself](https://btholt.github.io/next-course-starter/)
 - [Complete Intro to React v9](https://react-v9.holt.courses/)
-- [Complete Intro to SQLite](https://sqlite.holt.courses/)
+- [Complete Intro to MCP](https://mcp.holt.courses/)
 - [Vanilla JS: You Might Not Need a Framework](https://firtman.github.io/vanilla/)
 
 ## npm commands
@@ -130,6 +131,7 @@ _Future pushes to the main branch will automatically trigger a new deployment._
 - `npm run build` - Build your site for production. This will still include the Next.js server run time. Use this if you're using something like Vercel to host your site.
 - `npm run start` - Start an already-built server.
 - `npm run csv` – Will generate the CSV of the metadata from your course. Note you may have to run build first, depending on your csvPath.
+- `npm run llm-text` – Will generate the LLM full text of your course - this concatenates all your lessons together into one long text document that students can load into an LLM to get additional help. Also useful for editing - just ask your LLM to look at all the text and fix grammar/spelling/content errors.
 - `npm run seo` – Using ChatGPT, every file that does not have a description, ChatGPT will generate a description and keywords and write them to the file. Requires you to set a valid `OPENAI_API_KEY` (which means having a paid OpenAI account) using a [.env](https://github.com/motdotla/dotenv) or just by setting it in the environment. If a description already exists, this will skip it.
 
 ## Analytics

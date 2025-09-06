@@ -5,26 +5,27 @@
   "author": "Brian Holt <btholt+next-course-starter@gmail.com>",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && npm run csv",
+    "build": "next build && npm run csv && npm run llm-text",
     "start": "next start",
     "csv": "node csv/index.js",
-    "seo": "node summary/index.js"
+    "seo": "node summary/index.js",
+    "llm-text": "node summary/generateFullText.js"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.7.2",
+    "@fortawesome/fontawesome-free": "^7.0.1",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.11.1",
-    "marked": "^16.0.0",
+    "marked": "^16.2.1",
     "marked-highlight": "^2.2.2",
-    "next": "^15.3.4",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "next": "^15.5.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "title-case": "^4.3.2"
   },
   "devDependencies": {
     "convert-array-to-csv": "^2.0.0",
-    "dotenv": "^17.0.0",
-    "openai": "^5.8.2",
-    "zod": "^3.25.67"
+    "dotenv": "^17.2.2",
+    "openai": "^5.19.1",
+    "zod": "^4.1.5"
   }
 }
