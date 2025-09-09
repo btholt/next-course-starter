@@ -5,10 +5,21 @@ import getCourseConfig from "../../../data/course";
 import Corner from "../../../components/corner";
 import { Context } from "../../../context/headerContext";
 import createCopyCodeFunctionality from "../../../data/copyCode";
+import Link from "next/link";
 
 export default function LessonSlug({ post }) {
   const courseInfo = getCourseConfig();
   const [_, setHeader] = useContext(Context);
+
+  let nextLink, prevLink;
+  if (post.nextSlug) {
+    const shortNextSlug = post.nextSlug.replace(/^.*?\\.*?(?=\\)/, "");
+    nextLink = shortNextSlug.replace(/\\/g, "/");
+  }
+  if (post.prevSlug) {
+    const shortPrevSlug = post.prevSlug.replace(/^.*?\\.*?(?=\\)/, "");
+    prevLink = shortPrevSlug.replace(/\\/g, "/");
+  }
 
   useEffect(() => {
     setHeader({
@@ -55,15 +66,15 @@ export default function LessonSlug({ post }) {
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
           <div className="lesson-links">
-            {post.prevSlug ? (
-              <a href={post.prevSlug} className="prev">
+            {prevLink ? (
+              <Link href={prevLink} className="prev">
                 ← Previous
-              </a>
+              </Link>
             ) : null}
-            {post.nextSlug ? (
-              <a href={post.nextSlug} className="next">
+            {nextLink ? (
+              <Link href={nextLink} className="next">
                 Next →
-              </a>
+              </Link>
             ) : null}
           </div>
         </div>
