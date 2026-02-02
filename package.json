@@ -12,20 +12,20 @@
     "llm-text": "node summary/generateFullText.js"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^7.0.1",
+    "@fortawesome/fontawesome-free": "^7.1.0",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.11.1",
-    "marked": "^16.2.1",
-    "marked-highlight": "^2.2.2",
-    "next": "^15.5.2",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
+    "marked": "^17.0.1",
+    "marked-highlight": "^2.2.3",
+    "next": "^16.1.6",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "title-case": "^4.3.2"
   },
   "devDependencies": {
     "convert-array-to-csv": "^2.0.0",
-    "dotenv": "^17.2.2",
-    "openai": "^5.19.1",
-    "zod": "^3.23.8"
+    "dotenv": "^17.2.3",
+    "openai": "^6.17.0",
+    "zod": "^4.3.6"
   }
 }
