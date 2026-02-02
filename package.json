@@ -23,9 +23,11 @@
     "title-case": "^4.3.2"
   },
   "devDependencies": {
+    "@ai-sdk/anthropic": "^3.0.35",
+    "@ai-sdk/openai": "^3.0.25",
+    "ai": "^6.0.68",
     "convert-array-to-csv": "^2.0.0",
     "dotenv": "^17.2.3",
-    "openai": "^6.17.0",
     "zod": "^4.3.6"
   }
 }

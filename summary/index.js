@@ -1,10 +1,11 @@
-import OpenAI from "openai";
+import { generateObject } from "ai";
+import { anthropic } from "@ai-sdk/anthropic";
+import { openai } from "@ai-sdk/openai";
 import matter from "gray-matter";
 import "dotenv/config";
 import fs from "fs/promises";
 import { getLesson, getLessons } from "../data/lesson.js";
-import { zodResponseFormat } from "openai/helpers/zod";
-import getPrompt from "./getSystemPrompt.js";
+import getPrompt from "./getPrompt.js";
 import assert from "assert";
 import path from "path";
 import { z } from "zod";
@@ -17,12 +18,26 @@ const configBuffer = await fs.readFile(
 );
 const config = JSON.parse(configBuffer);
 
-const openai = new OpenAI();
+// Determine which provider to use based on available API keys
+// Defaults to Anthropic (Claude), falls back to OpenAI
+const useAnthropic = !!process.env.ANTHROPIC_API_KEY;
+const useOpenAI = !!process.env.OPENAI_API_KEY;
 
 assert(
-  process.env.OPENAI_API_KEY,
-  "OPENAI_API_KEY must exist. Either pass it in via the environment or define it in the .env file"
+  useAnthropic || useOpenAI,
+  "Either ANTHROPIC_API_KEY or OPENAI_API_KEY must be set. Pass it via the environment or define it in a .env file"
 );
+
+// Configure the model - prefer Anthropic if available
+const model = useAnthropic
+  ? anthropic("claude-sonnet-4-20250514")
+  : openai("gpt-5-mini");
+
+if (useAnthropic) {
+  console.log("🤖 Using Claude (Anthropic)");
+} else {
+  console.log("🤖 Using GPT-5 mini (OpenAI)");
+}
 
 async function exec() {
   const list = await getLessons();
@@ -43,27 +58,19 @@ async function summarize(section, lesson) {
     console.log(`⏺️ ${lesson.fullSlug}`);
   } else {
     try {
-      const completion = await openai.beta.chat.completions.parse({
-        model: "gpt-4o-2024-08-06",
-        messages: [
-          { role: "system", content: getPrompt(config) },
-          {
-            role: "user",
-            content: `The markdown content is: \n\n\n${rendered.markdown}`,
-          },
-        ],
-        response_format: zodResponseFormat(
-          z.object({
-            seoDescription: z.string(),
-            seoKeywords: z.array(z.string()),
-          }),
-          "lesson"
-        ),
+      const { object } = await generateObject({
+        model,
+        system: getPrompt(config),
+        prompt: `The markdown content is: \n\n\n${rendered.markdown}`,
+        schema: z.object({
+          seoDescription: z.string(),
+          seoKeywords: z.array(z.string()),
+        }),
       });
 
       const parsed = {
-        description: completion.choices[0].message.parsed.seoDescription,
-        keywords: completion.choices[0].message.parsed.seoKeywords,
+        description: object.seoDescription,
+        keywords: object.seoKeywords,
       };
 
       const newData = Object.assign({}, data, parsed);

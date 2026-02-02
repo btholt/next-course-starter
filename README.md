@@ -80,7 +80,7 @@ Each of these lessons can have a [frontmatter](https://github.com/jonschlinkert/
 - _description_ – If you want to give individual lessons descriptions for SEO and for Frontend Masters, you can write a brief description here.
 - _keywords_ - If you want to give individual lessons keywords for SEO purposes, write a comma separated list
 
-🤖: now the course starter can auto-generate the description and keywords for you using ChatGPT. See below how to.
+🤖: now the course starter can auto-generate the description and keywords for you using AI (Claude or GPT). See below how to.
 
 Be aware because of how the numbers and letters are stripped out, it is possible to have ambigious paths. `01-welcome/A-intro.md` and `03-welcome/D-intro.md` would resolve to the same thing and only the first one would be visitable.
 
@@ -132,7 +132,7 @@ _Future pushes to the main branch will automatically trigger a new deployment._
 - `npm run start` - Start an already-built server.
 - `npm run csv` – Will generate the CSV of the metadata from your course. Note you may have to run build first, depending on your csvPath.
 - `npm run llm-text` – Will generate the LLM full text of your course - this concatenates all your lessons together into one long text document that students can load into an LLM to get additional help. Also useful for editing - just ask your LLM to look at all the text and fix grammar/spelling/content errors.
-- `npm run seo` – Using ChatGPT, every file that does not have a description, ChatGPT will generate a description and keywords and write them to the file. Requires you to set a valid `OPENAI_API_KEY` (which means having a paid OpenAI account) using a [.env](https://github.com/motdotla/dotenv) or just by setting it in the environment. If a description already exists, this will skip it.
+- `npm run seo` – Using AI, every file that does not have a description will have a description and keywords generated and written to the file. Set either `ANTHROPIC_API_KEY` (for Claude, preferred) or `OPENAI_API_KEY` (for GPT-5 mini) using a [.env](https://github.com/motdotla/dotenv) file or by setting it in the environment. If both are set, Claude is used. If a description already exists, this will skip it.
 
 ## Analytics
 
