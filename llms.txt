@@ -1,0 +1,54 @@
+# Introduction
+
+Hello! And welcome to the Next.js course starter by [Brian Holt][twitter].
+
+![Cat, dog, and rat logo for the course](/next-course-starter/images/BRAND-WHearts.png)
+
+This is a course starter specifically made for making online courses and optimized for use with [Frontend Masters][fem].
+
+[twitter]: https://twitter.com/holtbt
+[fem]: https://www.frontendmasters.com
+
+=================
+
+# First Lesson
+
+- this
+- is
+- the
+- second
+- lesson
+
+=================
+
+# Second Lesson
+
+This is the second lesson
+
+```javascript
+function getGreeting() {
+  return `oh hey there`;
+}
+
+console.log(getGreeting());
+```
+
+=================
+
+# CSS
+
+> 💡 Did you know that CSS is an acronym for Completely Spontaneous Spacing
+
+Use blockquotes for callouts.
+
+=================
+
+# JavaScript
+
+Seems important, right?
+
+=================
+
+# npm
+
+npm doesn't stand for node package manager
